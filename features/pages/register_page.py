@@ -96,11 +96,11 @@ class Register_Page(Base_Page):
         self.page.get_by_role("button", name=self.locators["Purchase"]).click()
 
     def thankyoupurchase(self):
-       # expected_text = self.ALERT_MESSAGES["thank_you_purchase"]
+        expected_text = self.ALERT_MESSAGES["thank_you_purchase"]
     # This function will run when alert appears
         def handle_dialog(dialog):
             alert_text = dialog.message()
             print("Alert:", alert_text)
-        #    assert alert_text == expected_text, f"Expected: {expected_text}, Got: {alert_text}"
-            assert alert_text == "Thank you for your purchase!", "Alert message mismatch!"
+            assert alert_text == expected_text, f"Expected: {expected_text}, Got: {alert_text}"
+        #    assert alert_text == "Thank you for your purchase!", "Alert message mismatch!"
             dialog.accept()
